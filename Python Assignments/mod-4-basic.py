@@ -107,7 +107,7 @@ def interest(principal, rate, periods):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     si = principal * (rate * periods)  # calculation for simple interest
-    fv = principal * si  # obtain final value
+    fv = principal + si  # obtain final value
 
     return fv
 
