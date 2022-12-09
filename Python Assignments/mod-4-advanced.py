@@ -158,11 +158,11 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    SIZE = len(board)
+    S = len(board)
 
     #to check board size
-    for i in range(SIZE):
-        for j in range(SIZE):
+    for i in range(S):
+        for j in range(S):
             if board[i][j] == "X":
                 board[i][j] = 1
             elif board[i][j] == "O":
@@ -176,35 +176,35 @@ def tic_tac_toe(board):
 
     #check horizontal
     for col_sum in col_sums:
-        if col_sum == SIZE:
+        if col_sum == S:
             return "X"
-        elif col_sum == -SIZE:
+        elif col_sum == -S:
             return "O"
 
     #check vertical
     row_sums = np.sum(board, axis=0)
     for row_sum in row_sums:
-        if row_sum == SIZE:
+        if row_sum == S:
             return "X"
-        elif row_sum == -SIZE:
+        elif row_sum == -S:
             return "O"
 
     #check diagonal
     primary_diag_sum = 0 #going down to the right diagonal
-    for i in range(SIZE):
+    for i in range(S):
         primary_diag_sum += board[i][i]
-    if primary_diag_sum == SIZE:
+    if primary_diag_sum == S:
         return "X"
-    elif primary_diag_sum == -SIZE:
+    elif primary_diag_sum == -S:
         return "O"
 
     #check inverse diagonal 
     secondary_diag_sum = 0
-    for i in range(SIZE):
-         secondary_diag_sum += board[i, (SIZE - 1) - i]
-    if secondary_diag_sum == SIZE:
+    for i in range(S):
+         secondary_diag_sum += board[i, (S - 1) - i]
+    if secondary_diag_sum == S:
         return "X"
-    elif secondary_diag_sum == -SIZE:
+    elif secondary_diag_sum == -S:
         return "O"
     else:
         return "No Winner"
